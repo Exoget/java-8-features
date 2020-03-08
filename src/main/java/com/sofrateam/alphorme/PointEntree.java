@@ -20,14 +20,17 @@ public class PointEntree {
         // lambdas expression : va remplacer la creation d'un object utilisant une class anonyme
         appelInterface(() -> System.out.println("execute Interface - Lambdas expression"));
 
-        // a travers d'une variable qui declare une fonction
+        // a travers une variable interface qui declare une fonction
         MyFonctionalInterface monInterface = () -> System.out.println("execution de fonction retardée");
         monInterface.execute();
         // ou bien
         appelInterface(monInterface);
 
-        // a travers les réferences sur Methodes, il faut que la methode a la meme signature que l'interface fonctionel
+        // a travers des réferences sur Methodes, il faut que la methode a la meme signature que l'interface fonctionel
         MaClass maClass = new MaClass();
         appelInterface(maClass::execute);
+        //ou bien
+        MyFonctionalInterface monInterface2 = maClass::execute;
+        appelInterface(monInterface2);
     }
 }
