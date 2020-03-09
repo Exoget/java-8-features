@@ -4,10 +4,11 @@ import java.util.function.Function;
 import java.util.function.UnaryOperator;
 
 /*
- #Function<T, R>    : Interface Functionel avec une methode apply qui prend <T> et renvoi <R>
- #UnaryOperator<T>  : Interface Functionel avec une methode apply qui prend <T> et renvoi <T>
- #BiFunction<T, U, R>  : Interface Functionel avec une methode apply qui prend <T>,<U> et renvoi <R>
- #BinaryOperator<T> : Interface Functionel avec une methode apply qui prend <T>,<T> et renvoi <T>
+ Class contenant des examples dsur l'interface fonctionnelle type Function
+ #Function<T, R>    : une interface fonctionnelle avec une methode apply() qui prend le type <T> et renvoi le type <R>
+ #UnaryOperator<T>  : une interface fonctionnelle avec une methode apply() qui prend le type <T> et renvoi le type <T>
+ #BiFunction<T, U, R>  : une interface fonctionnelle avec une methode apply() qui prend types <T>,<U> et renvoi type <R>
+ #BinaryOperator<T> : une interface fonctionnelle avec une methode apply() qui prend types <T>,<T> et renvoi type <T>
  */
 public class Client {
 
