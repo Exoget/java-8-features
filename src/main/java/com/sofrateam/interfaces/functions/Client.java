@@ -4,7 +4,7 @@ import java.util.function.Function;
 import java.util.function.UnaryOperator;
 
 /*
- Class contenant des examples dsur l'interface fonctionnelle type Function
+ Class contenant des examples sur l'utilisation des interface fonctionnelle de type Function
  #Function<T, R>    : une interface fonctionnelle avec une methode apply() qui prend le type <T> et renvoi le type <R>
  #UnaryOperator<T>  : une interface fonctionnelle avec une methode apply() qui prend le type <T> et renvoi le type <T>
  #BiFunction<T, U, R>  : une interface fonctionnelle avec une methode apply() qui prend types <T>,<U> et renvoi type <R>
