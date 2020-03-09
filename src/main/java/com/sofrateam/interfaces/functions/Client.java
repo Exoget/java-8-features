@@ -9,6 +9,11 @@ import java.util.function.UnaryOperator;
  #UnaryOperator<T>  : une interface fonctionnelle avec une methode apply() qui prend le type <T> et renvoi le type <T>
  #BiFunction<T, U, R>  : une interface fonctionnelle avec une methode apply() qui prend types <T>,<U> et renvoi type <R>
  #BinaryOperator<T> : une interface fonctionnelle avec une methode apply() qui prend types <T>,<T> et renvoi type <T>
+ autres Methodes implementer par defaut:
+    andThen(after)  :applique la fonction courante puis celle en parametre
+    compose(before) : applique d'abord l'argument puis la courante
+    indentity() : retourne l'argument
+
  */
 public class Client {
 
