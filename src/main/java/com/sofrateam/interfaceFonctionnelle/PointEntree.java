@@ -1,4 +1,4 @@
-package com.sofrateam.alphorme;
+package com.sofrateam.interfaceFonctionnelle;
 
 public class PointEntree {
 
@@ -17,7 +17,7 @@ public class PointEntree {
             }
         });
 
-        // lambdas expression : va remplacer la creation d'un object utilisant une class anonyme
+        // cas (4) : lambdas expression : va remplacer la creation d'un object utilisant une class anonyme
         appelInterface(() -> System.out.println("execute Interface - Lambdas expression"));
 
         // a travers une variable interface qui declare une fonction
@@ -26,7 +26,7 @@ public class PointEntree {
         // ou bien
         appelInterface(monInterface);
 
-        // a travers des réferences sur Methodes, il faut que la methode a la meme signature que l'interface fonctionel
+        // cas (2) : a travers des réferences sur Methodes, il faut que la methode a la meme signature que l'interface fonctionelle
         MaClass maClass = new MaClass();
         appelInterface(maClass::execute);
         //ou bien

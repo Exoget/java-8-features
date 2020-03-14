@@ -1,4 +1,4 @@
-package com.sofrateam.alphorme;
+package com.sofrateam.interfaceFonctionnelle;
 
 public class MaClass {
 
