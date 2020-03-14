@@ -88,4 +88,15 @@ public class Personne {
     public static void setNbInstance(int nbInstance) {
         Personne.nbInstance = nbInstance;
     }
+
+    @Override
+    public String toString() {
+        return "Personne{" +
+                "nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+                ", dateNaissance=" + dateNaissance +
+                ", valide=" + valide +
+                ", numero=" + numero +
+                '}';
+    }
 }
