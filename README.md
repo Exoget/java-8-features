@@ -61,7 +61,7 @@ Le but d’une interface fonctionnelle est de définir la signature d’une mét
 *  une expression lamba (je peux changer l'implémentation dans chaque appel, je suis plus libre)
 
 ### Il y a quatre types d'interfaces fonctionnelles
-function   : avec une méthode R= apply(T) qui prend un paramètre T et renvoie un paramètre R
-predicate : avec une méthode Boolean = test(T) qui prend un paramètre T et renvoie un Boolean
-supplier   : avec une méthode T = get() qui renvoie paramètre T
-consumer : avec une méthode void = accept(T) qui prend en paramètre T et renvoie rien
+* ```function<T,R>```   : avec une méthode ```R= apply(T)``` qui prend un paramètre ```<T>``` et renvoie un paramètre ```<R>```
+* ```predicate<T>``` : avec une méthode ```Boolean = test(T)``` qui prend un paramètre ```<T>``` et renvoie un ```<Boolean>```
+* ```supplier```   : avec une méthode ```T = get()``` qui renvoie paramètre ```<T>```
+* ```consumer<T>``` : avec une méthode ```void() = accept(T)``` qui prend en paramètre ```<T>``` et renvoie rien
