@@ -18,7 +18,7 @@ public class TestOptional {
         if (donnee.isPresent()) {
             System.out.println("Donnee present: " + donnee.get());
         } else {
-            System.out.println("Donne non present: " + donnee.get());
+            System.out.println("Donne non present: " + donnee.orElse("non dipso"));
         }
 
         donnee = getValue("non conforme");
@@ -32,10 +32,10 @@ public class TestOptional {
         Integer value1 = null;
         Integer value2 = new Integer(10);
 
-        //Optional.ofNullable - je tolère que le paramètre a peut etre null
+        //Optional.ofNullable - je tolère que le paramètre A peut etre null
         Optional<Integer> a = Optional.ofNullable(value1);
 
-        //Optional.of - paramètre b est obligatoire, si non present je lance une exception NullPointerException
+        //Optional.of - paramètre B est obligatoire, si non present je lance une exception NullPointerException
         Optional<Integer> b = Optional.of(value2);
         System.out.println(sum(a,b));
     }
