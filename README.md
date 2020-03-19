@@ -65,3 +65,23 @@ Le but d’une interface fonctionnelle est de définir la signature d’une mét
 * ```predicate<T>``` : avec une méthode ```Boolean = test(T)``` qui prend un paramètre ```<T>``` et renvoie un ```<Boolean>```
 * ```supplier```   : avec une méthode ```T = get()``` qui renvoie paramètre ```<T>```
 * ```consumer<T>``` : avec une méthode ```void() = accept(T)``` qui prend en paramètre ```<T>``` et renvoie rien
+
+# Optional<T>
+probleme : comment exprimer l'abscence d'une valeur pour une variable
+Optional<T> est utliser pour encapsuler une valeur de type T, cette valeur peut etre abscente:
+Methodes :
+* ```isPresent()``` pour tester la presence de la valeur
+* ```get()``` pour recuperer la valeur si elle existe
+
+Consturction d'un objet de type Optional
+
+* ```of(T)``` : construire un objet de type Optional a partir d'une valeur non nul (lance un exception si la valeur est null)
+* ```ofNullable(T)``` : construire un objet de type Optional a partir d'une valeur qui peut etre non valide (non existante)
+* ```empty()``` : constuire un Optional vide
+
+Recuperation de la valeur :
+
+* ```get()``` : bien sur
+* ```orElse()``` : qui prend un parametre et retourner la valeur , mais si pas de valeur va retourner ce qui a été passé en parametre
+* ```orElseGet()```: meme chose mais en parametre on passe un Supplier
+* ```orElseThrow()```: meme chose , sinon on retourne une exception
