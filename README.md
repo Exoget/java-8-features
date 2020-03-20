@@ -1,22 +1,23 @@
 # java-8-features
-Demo java 8 features ...
+Les points importants dans La version Java 8
 
-# Syntaxe Lambdas : ( utilisée dans les langage fonctionnel)
+# Syntaxe Lambdas : ( utilisée en langage fonctionnel)
 
 Elle contient une liste de paramètres, se présente comme une fonction Anonyme ( sans référence à aucune class ).
 C’est un moyen d'écrire un code de traitement en java sans pour autant avoir à créer une classe ( tous les traitements en java sont dans les méthodes des class).
 () -> {}
 
-## Besoin de ces expression Lambdas : le Quand ?
+## Besoin de ces expressions Lambdas : le Quand ?
 
-Fournir une expression courte qui n’existe pas et qu'on veut pas créer une class pour elle ( comme nous le savon en java tout est dans la class les méthodes; les membres)
+Fournir une expression courte qui n’existe pas et qu'on veut pas créer une class pour elle ( comme nous le savons, en java tout est dans les clas: les méthodes, les membres)
 Fournir des prédicats : fonction retourne True / False : simple test.
 Fournir des consommateurs : fonction qui accepte une donnée.  
+d'une maniere général elle est utlisée pour les interfaces fonctionnelles ( fonctions, predicates, consumers et suppliers ).
 
 C’est une fonction anonyme qui est faite pour être assez courte, pour être utilisée à un moment donnée ou nous avons besoin ponctuellement de cette fonction/ bien évidemment la fonction n’est pas réutilisable.
 
 # Expression Lambda et class Anonyme
-Class anonyme : création des objets sans même avoir à nommer la class
+Class anonyme : un moyen de créer des objets sans même avoir à nommer des class
 
 L’exemple le plus connu c’est les interface swing java ActionListener
 
@@ -28,14 +29,14 @@ public void actionPerformed(ActionEvent ae){
 }});
 ```
 
-On a créé un objet de type interface ActionListener alors qu’on dispose pas d’une classe, elle est juste sans nom ( juste il faut implémenter les méthodes de l’interface )
+On a créé un objet de type interface ActionListener alors qu’on dispose pas d’une classe, elle est juste sans nom ( juste il faut implémenter les méthodes de l’interface, tous les methodes disponibles )
 
 
 ### L’utilisation des expressions lambdas
-La plus courte des expression
-pas de class a declarer
-focalisée sur le traitement à mettre en place
-correspond à une interface à une seule méthode 
+C'est la plus courte des expression
+On a pas une class a declarer
+On focalise sur le traitement à mettre en place
+Corresponde à une interface avec une seule méthode 
 
 Avec l'expression Lambdas : button.addActionListener( ae -> // traitement );
 ### Limites Lambdas
