@@ -68,7 +68,7 @@ Le but d’une interface fonctionnelle est de définir la signature d’une mét
 * ```consumer<T>``` : avec une méthode ```void() = accept(T)``` qui prend en paramètre ```<T>``` et renvoie rien
 
 # Optional<T>
-Probleme : Comment exprimer l'abscence d'une valeur pour une variable.
+Probleme : Comment exprimer l'abscence d'une valeur pour une variable. Au lieu d'utiliser une valeur de retour fixe dans certains cas de figure pour designer cette abscence.
 	
 Solution : Optional<T> est utliser pour encapsuler une valeur de type T, cette valeur peut etre abscente:
 Methodes :
