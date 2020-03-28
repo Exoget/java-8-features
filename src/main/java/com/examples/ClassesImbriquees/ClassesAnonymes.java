@@ -3,6 +3,7 @@ package com.examples.ClassesImbriquees;
 import com.examples.interfaces.Personne;
 
 import java.util.Arrays;
+import java.util.function.Predicate;
 
 interface Comparateur {
     int compare(Object o1, Object o2);
@@ -51,6 +52,15 @@ public class ClassesAnonymes {
         return tab;
     }
 
+    // Methode generale de recuperation d'un element ( on defini le critere au moment de l'appel )
+    public static Object findOccurence(Object[] tab, Predicate<Object> predicate) {
+
+        for (Object o : tab) {
+            if (predicate.test(o)) return o;
+        }
+        return null;
+    }
+
     public static void main(String args[]) {
 
         Personne[] tab = new Personne[]{new Personne("test4"), new Personne("test1"), new Personne("test2")};
@@ -81,6 +91,14 @@ public class ClassesAnonymes {
         tab = (Personne[]) sort(tab, cmpImp);
 
         Arrays.stream(tab).forEach(System.out::println);
+
+        System.out.println(" Chercher l'ocurence ...");
+        //TODO chercheer pourquoi je ne peux pas utiliser direct un cast sur (Personne) per.getNom().equals("test4")
+        Personne p = (Personne) findOccurence(tab, per -> {
+            Personne o = (Personne) per;
+            return o.getNom().equals("test4");
+        });
+        System.out.println(p);
     }
 
 }
