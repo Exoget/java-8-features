@@ -75,9 +75,15 @@ class Catalogue {
 
 
         System.out.println("je cherche les articles dans le type est > 2");
+        //avec l'instruction return il faut ajouter les accolades meme avec une seule expression
         List<Article> tmp = cat.getArticles(article -> {
             return article.getType() > 2;
         });
+
+        // je peux aussi faire (sans return mais a condition une seul instruction )
+        List<Article> tmp2 = cat.getArticles(article ->
+                article.getType() > 2
+        );
 
         for (Article e : tmp) {
             System.out.println(e.getDesignation());
