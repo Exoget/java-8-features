@@ -1,4 +1,4 @@
-package com.examples;
+package com.examples.interfaces;
 
 public class Personne implements Classable {
 
