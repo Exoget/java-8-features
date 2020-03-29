@@ -40,13 +40,17 @@ Corresponde à une interface avec une seule méthode
 
 Avec l'expression Lambdas : button.addActionListener( ae -> // traitement );
 ### Limites Lambdas
-La portée essentiellement des variables : les variables d’une expression lambda n’ont pas un espace propre : confusion des noms avec ceux de la méthode englobante ( variable already defined si j'utilise le même nom de variable/ plus le problème masquer les variable attribut). 
+La portée essentiellement des variables : les variables d’une expression lambda n’ont pas un espace propre :
+confusion des noms avec ceux de la méthode englobante ( variable already defined si j'utilise le même nom de variable/ plus le problème masquer les variable attribut).
 
 ### Références des méthodes
-en java les @ des variables ou des fonction ne sont pas manipulables !! évidemment on ne parle pas de pointeur sur une variable ou sur une fonction ( en C++ on peut manipuler directement la mémoire, on peut avoir des accès direct aux fonctions .. contrairement en java jusqu'à la version 8)  
+en java les @ des variables ou des fonctions ne sont pas manipulables !! évidemment on ne parle pas de pointeur sur une variable ou sur une fonction ( en C++ on peut manipuler directement la mémoire,
+on peut avoir des accès direct aux fonctions .. contrairement en java jusqu'à la version 8)
 
-En java 8 on peut fournir aux algorithmes qui en ont besoin directement un accès à des méthodes qui existent déjà , la solution nouvelle peut s’appliquer à des méthodes statiques, des méthodes d'instances et sur des constructeurs. 
+En java 8 on peut fournir aux algorithmes qui en ont besoin directement un accès à des méthodes qui existent déjà , la nouvelle approche peut s’appliquer à des méthodes statiques, des méthodes d'instances et sur des constructeurs.
 
+En ce qui concerne le cas d'usage, lorsqu'une expresion lambdas devient trop long(volumineuse), ou quelle doit etre réutilisée à plusierus emplacement dans l'application,
+on peut deplacer son contenu dans une fonction et de simplement appeler cette fonction dans le corps de l'expression lambdas ( toutefois il faut bien respecter la signature de la methode )
 
 # Les interfaces fonctionnelles
 C’est une interface avec une seule méthode abstraite, peut contenir d’autres méthodes avec des implémentations par défaut.   
@@ -59,7 +63,7 @@ Le but d’une interface fonctionnelle est de définir la signature d’une mét
 *  une référence vers une méthode statique
 *  une référence vers une méthode d’instance
 *  une référence vers un constructeur
-*  une expression lamba (je peux changer l'implémentation dans chaque appel, je suis plus libre)
+*  une expression lamba (je peux changer l'implémentation dans chaque appel, je suis plus libre de choisir l'implementation que je veux)
 
 ### Il y a quatre types d'interfaces fonctionnelles
 * ```function<T,R>```   : avec une méthode ```R= apply(T)``` qui prend un paramètre ```<T>``` et renvoie un paramètre ```<R>```

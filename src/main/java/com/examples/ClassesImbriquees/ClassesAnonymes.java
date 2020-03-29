@@ -18,6 +18,7 @@ interface Comparateur {
 // cette classe contient une methode qui va trier des objet
 public class ClassesAnonymes {
 
+    // Class interne
     class CompateurImp implements Comparateur {
 
         @Override
@@ -64,11 +65,10 @@ public class ClassesAnonymes {
     public static void main(String args[]) {
 
         Personne[] tab = new Personne[]{new Personne("test4"), new Personne("test1"), new Personne("test2")};
-
         Arrays.stream(tab).forEach(System.out::println);
 
 
-        // Class Anonyme
+        // avec la class Anonyme
         tab = (Personne[]) sort(tab, new Comparateur() {
 
             @Override
@@ -85,12 +85,12 @@ public class ClassesAnonymes {
         });
 
         System.out.println(" Apres le Sport() ...");
-        // Class interne
+        // avec la class interne
         ClassesAnonymes c = new ClassesAnonymes();
         ClassesAnonymes.CompateurImp cmpImp = c.new CompateurImp();
         tab = (Personne[]) sort(tab, cmpImp);
-
         Arrays.stream(tab).forEach(System.out::println);
+
 
         System.out.println(" Chercher l'ocurence ...");
         //TODO chercheer pourquoi je ne peux pas utiliser direct un cast sur (Personne) per.getNom().equals("test4")
