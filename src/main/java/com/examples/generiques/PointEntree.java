@@ -1,9 +1,9 @@
 package com.examples.generiques;
 
+import com.examples.interfaces.Classable;
 import com.examples.interfaces.Personne;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class PointEntree {
@@ -14,16 +14,21 @@ public class PointEntree {
 
     public static void main(String args[]) {
 
-
         list.ajout(new Personne("test4")); //position 0
         list.ajout(new Personne("test3")); //position 1
         list.ajout(new Personne("test1")); //position 2
         list.ajout(new Personne("test2")); //position 3
-        menu();
 
+        try {
+            UtilsGenerique.tri(list);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        main();
     }
 
-    static void choix() {
+    static void menu() {
         System.out.println("Programme principal");
         System.out.println("p: premier");
         System.out.println("<: précédent");
@@ -32,9 +37,9 @@ public class PointEntree {
         System.out.println("f: fin");
     }
 
-    static void menu() {
+    static void main() {
         char choix = '\0';
-        choix();
+        menu();
         while (choix != 'f') {
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
             try {
@@ -55,7 +60,8 @@ public class PointEntree {
                     case 'f':
                         System.out.println("programme terminé");
                         break;
-                    default: choix();
+                    default:
+                        menu();
                 }
             } catch (Exception e) {
                 e.printStackTrace();
