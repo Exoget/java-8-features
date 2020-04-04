@@ -91,3 +91,32 @@ Recuperation de la valeur :
 * ```orElse()``` : qui prend un parametre et retourner la valeur , mais si pas de valeur va retourner ce qui a été passé en parametre
 * ```orElseGet()```: meme chose mais en parametre on passe un Supplier
 * ```orElseThrow()```: meme chose , sinon on retourne une exception
+
+# Générique
+Rq : l'héritage n'est pas possible avec les génériques, nous savons qu'avec une variable d'un certain type nous pouvons référencer 
+une instance de meme type mais aussi une instance de ses sous types.
+```
+Personne p;
+Client c;
+c = new Client();
+p = c;
+p.setNom()...
+p.setPrenon()...
+```
+avec les classes génrique ce n'est pas possible
+```
+ListeGenerique<Personne> listePersonnes;
+ListeGenerique<Client> listeClients;
+listeClients = new ListeGenerique<Client>(10);
+listePersonnes = listeClients !!!! erreur imcompatible types
+```
+Cette erreur est liée au mecanisme d'effacement de type utilisée par le compilateur.
+Pour remédier à cette situation nous pouvons utiliser l'operateur Joker ```<?>```.
+Si nous l'utilisons tout seul ```<?>``` nous pouvons accéder suelement aux methodes de la class ```Object```.
+Pour cela on peut ajouter une contrainte pour desinger les types parametre a utiliser
+```methode(ListeGenerique<? extends Personnes> list)```.
+######  Limitation
+* le type arguement de type parametre ```<T>``` ne peut pas etre un type primitif(il faut utiliser les wrapper sinon).
+* le type parametre ```<T>``` ne peut pas etre utilisé pour creer une instance new T() à l'interieur de la calsse generique.
+* le type parametre ```<T>``` ne peut pas etre utilisé pour déclarer des variables static dans la class generique.
+* l'operateur ```instanceOf``` ne peut pas etre utilisé puisque le compilateur utilise le principe d'effacement de type.
