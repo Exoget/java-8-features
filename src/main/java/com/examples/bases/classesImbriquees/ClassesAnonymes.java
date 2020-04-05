@@ -1,4 +1,4 @@
-package com.examples.bases.ClassesImbriquees;
+package com.examples.bases.classesImbriquees;
 
 import com.examples.bases.interfaces.Personne;
 

@@ -1,4 +1,4 @@
-package com.examples.bases.ClassesImbriquees;
+package com.examples.bases.classesImbriquees;
 
 public class ClassesInternes {
     double taux = 1.96;
