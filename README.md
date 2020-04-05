@@ -149,4 +149,36 @@ Selon comment on va enchaîner les oéprations on oblige le compilateur à gén�
 * éfficacité due à l'enchainement des oéprations qui ne détiennent pas d'état (filtre) ne cherche pas à executé du code en avance puisque le code va etre
 déclancher lorsqu'on trouve l'operation terminal.
 
+##### BaseStream<> interface
+C'est l'interface de base de toutes les interfaces Stream. Elle est générique elle corresponde au type de données que vous générer.
+Les méthodes : 
+* ```close()``` Fermeture
+* ```parallel(), isParallel``` Parallélisme
+* ```sequential()``` En séquence
+* ```iterator(), spliterator()``` Itération
+* ```unordered()``` sans contrainte sur l'ordre, particulierement intéressante puisque on peut avoir un bénéfice si on libere la contrainte d'ordre
+au moment d'execution des operations cela pourrait être rendu de manière plus efficace.
 
+
+##### Stream<> interface
+C'est l'interface représentatif , sous interface de BaseStream. Une interface dédier aux objects.
+L'objet Stream peut etre obtenu à partir d'une source ( tableau, collection, fonction génératrice, canal IO ..)  
+Les opérations sans etats: l'opération qui est declanché va transformé le flux mais fournit un nouveau flux à partir d'un premier.
+Le Stream est déclanché une seule fois. Peut se faire en séquentielle ou en parallele.
+
+##### Interface Spécialisées
+elles concernent les types prémétifs : ```DoubleStream,IntStream, LongStream```
+
+##### Stream.Builder
+Existent aussi pour les interfaces spécialisées : DoubleStream.Builder, IntStream.Builder ...
+Permet de créer un Stream et de le modifier avant d'appliquer les oéprations.
+```
+DoubleStream.Builder  b = DoubleStream.builder();
+// construction de flux en amont
+b.accept(1.1);
+b.accept(2.2);
+b.accept(3.3);
+// on peut decaler l'alimentation de Stream de l'appilcation de la methode
+b.build().forEach(System.out::println);
+```
+Le Stream sera générer lors de l'appel de ```build()```.
