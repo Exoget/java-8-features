@@ -3,6 +3,7 @@ package com.examples.avance.streams;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Stream;
 
 public class MonStream {
@@ -17,8 +18,8 @@ public class MonStream {
         maListe.add("Fares");
         maListe.add("Xavier");
 
-        maListe.stream()
-                .filter(s -> s.contains("r"))
+        maListe.stream() // obtenir un flux sur une liste
+                .filter(s -> s.contains("r")) // operation intermédiaire
                 .forEach(f -> System.out.println(f));
 
         maListe.stream().forEach(System.out::println);
@@ -37,15 +38,21 @@ public class MonStream {
         forEach(Consumer<T>)
         maListe.stream().forEach(System.out::println);
 
-        je ne peux pas faire parcontre cet appel
+        je ne peux pas faire parc ontre cet appel
         list.stream().forEach(s -> System.out::println(s));
         */
 
         Stream.of("fares", "test", "thomas", "rayen")
                 .filter(s -> s.contains("r"))
-                .map(s -> s + "map")
+                .map(s -> s + "map") // transformer une donnée en une autre
                 .map(String::toUpperCase)
                 .forEach(System.out::println);
 
+        Optional<Integer> somme = Stream.of("fabien", "xavier", "brissonneau")
+                .filter(s -> s.length() < 7)
+                .map(s -> s.length()) // transformer une donnée en une autre
+                .reduce((a, b) -> a + b);
+
+        System.out.println("Somme est : " + somme.get());
     }
 }
