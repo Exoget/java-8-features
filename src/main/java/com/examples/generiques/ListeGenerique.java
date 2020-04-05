@@ -2,6 +2,7 @@ package com.examples.generiques;
 
 import java.util.ArrayList;
 
+//Classe générique qui manipule un ensemble de données de n'importe quel type
 public class ListeGenerique<T> {
 
     //list items

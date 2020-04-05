@@ -4,7 +4,7 @@ import com.examples.interfaces.Classable;
 
 public class UtilsGenerique {
 
-    // cette fonction permet de trier des element generique
+    // cette fonction permet de trier des element generique de type classable
     static <T extends Classable> void tri(ListeGenerique<T> tab) throws Exception{
         int i, j;
         T c;
