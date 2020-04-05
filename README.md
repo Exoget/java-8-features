@@ -120,3 +120,33 @@ Pour cela on peut ajouter une contrainte pour desinger les types parametre a uti
 * le type parametre ```<T>``` ne peut pas etre utilisé pour creer une instance new T() à l'interieur de la calsse generique.
 * le type parametre ```<T>``` ne peut pas etre utilisé pour déclarer des variables static dans la class generique.
 * l'operateur ```instanceOf``` ne peut pas etre utilisé puisque le compilateur utilise le principe d'effacement de type.
+
+# API Stream
+Classe introduite dans java 8 sous le package ```java.util.stream```.
+```Stream``` est un objet qui represente un ensemble d'opérations, se base sur l'enchainement de plusieurs oépration appliquées en pipeLine
+( recréer un flux à partir d'un autre flux ).
+Le point de dépard est un conteneur ( quelque chose qui donne accés aux données ) souvent c'est des collections.
+```maListe.stream().operation```.
+
+```pipeline``` ensemble de transformations qui sont liées les unes aux autres.
+* Des opérations intermidiaires
+* Une opération terminale
+
+```
+maListe.stream() // récupération d'un objet Stream
+          .filter(s-> s.length() > 5) // filtre des chaines
+          .forEach(System.out::println) // affichage
+```
+          
+L'ordre est trés important :
+* point de vue résultat obtenu
+* point de vue perfermance obtenu
+Selon comment on va enchaîner les oéprations on oblige le compilateur à générer certains nombre d'opérations qui nous dépassent, les impact, inconvénients ).
+
+#### Pourquoi 
+* code plus clair, lisible.
+* mise en oueuvre du parallélisme.
+* éfficacité due à l'enchainement des oéprations qui ne détiennent pas d'état (filtre) ne cherche pas à executé du code en avance puisque le code va etre
+déclancher lorsqu'on trouve l'operation terminal.
+
+
