@@ -182,3 +182,27 @@ b.accept(3.3);
 b.build().forEach(System.out::println);
 ```
 Le Stream sera générer lors de l'appel de ```build()```.
+##### Les Opérations
+Méthodes intermédiaires : qui reproduissent des flux ( en général avec un accées restrainte : transformer limité au flux d'origine).
+
+* ```distinct``` : retourne un Stream avec des élements distincts
+* ```filter(Predicate)``` : va nous retourner un Stream dont les élement correspondent au prédicat.
+* ```flatMap(Function)``` : va nous fournir un Stream dont les élements sont remplacés par les elements du Stream fournit par la fonction.
+* ```limit(long)``` : va nous fournir un obejt Stream mais limité en nombre d'élements.
+* ```map(Function)``` : va nous fournir un Stream dont les élements sont l'application de la fonction à chaque élement.
+* ```peek(Consumer)``` : va nous fournir un Stream dont les élements sont les memes, mais la fonction est appliquée à chaque élément.
+* ```skip(long)``` : va nous fournir un flux dont les élements sont les memes, sauf en réalité ce sont les éléments ceux qui restent aprés l'élimination des premiers.
+* ```sorted()``` : va nous fournir un Stream dont les élements sont triés dans l'ordre naturel ( ou avec des parametres comparateurs ).
+
+Méthodes terminales : vont produire un résulat ( ne produissent pas un flux).
+* ```allMatch(Predicate)``` : retourne vrai si chaque élément vérifie le prédicat.
+* ```anyMatch(Predicate)``` : retourne vrai si l'un des éléments vérifie le prédicat.
+* ```findAny()``` : retourne un Optional qui représente un des éléments du Stream.
+* ```findFirst()``` : retourne un Optional qui représente le premier éléments du Stream.
+* ```noneMatch(Predicate)``` : retourne vrai si aucun élément ne vérifie le prédicat.
+* ```forEach(Consumer)``` : applique la fonction sur chacun des éléments.
+* ```reduce(BinaryOperator)``` : réduit les éléments en les accumulant grace à la fonction fournie, retourne un Optional.
+
+Classe Collectors : fournit des methodes qui facilite un peut les réduction ( les transformations des données du flux en quelque chose de plus réduit)
+classe de service dans le package java.util.Stream.
+Méthodes : ```averaging(), counting(), groupingBy(), joining(), partitioningBy(), summing(), toMap(), toSet() ..```
