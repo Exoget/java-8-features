@@ -4,6 +4,7 @@ package com.examples.avance.streams;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class MonStreamAvance {
 
@@ -21,9 +22,32 @@ public class MonStreamAvance {
         list.stream().map(f -> f.getTotal()).forEach(System.out::println);
 
         // some des valeurs
-        Optional resulat1 = list.stream().map(f -> f.getTotal()).reduce( (a, b) -> a+b);
-        Optional resulat2 = list.stream().map(f -> f.getTotal()).reduce( Double::sum);
+        Optional resulat1 = list.stream().map(f -> f.getTotal()).reduce((a, b) -> a + b);
+        Optional resulat2 = list.stream().map(f -> f.getTotal()).reduce(Double::sum);
         System.out.println("Resulatats: " + resulat1.get());
         System.out.println("Resulatats: " + resulat2.get());
+
+        //Stream Parallel
+        String resulat = list.parallelStream().filter(str -> str.getTotal() > 250)
+                // .map(Facture::getClient) la meme chose
+                .map(fac -> fac.getClient())
+                .collect(Collectors.joining("#"));
+        System.out.println(resulat);
+
+        // je peux obtenir le meme stream parallele en partant d'un stream sequentiel
+        String rest = list.stream().filter(str -> str.getTotal() > 250)
+                .parallel()
+                .map(fac -> fac.getClient())
+                .collect(Collectors.joining("#"));
+        System.out.println(rest);
+
+        //Il est tjr possible de mixer flux parallele et flux sequentiel
+        // Dans l'effet du parallelisme, il faut prendre en considération que certain opérations ne supportent pas
+        // le désordonnancement en particulier les opération d'affichage que l'on voudrait ordonner.
+        list.parallelStream().filter(str -> str.getTotal() > 250)
+                .sequential() // pour l'affichage en ordre
+                .map(fac -> fac.getClient())
+                .forEach(System.out::println);
+
     }
 }
