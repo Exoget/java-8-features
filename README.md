@@ -206,3 +206,7 @@ Méthodes terminales : vont produire un résulat ( ne produissent pas un flux).
 Classe Collectors : fournit des methodes qui facilite un peut les réduction ( les transformations des données du flux en quelque chose de plus réduit)
 classe de service dans le package java.util.Stream.
 Méthodes : ```averaging(), counting(), groupingBy(), joining(), partitioningBy(), summing(), toMap(), toSet() ..```
+
+# API Date
+La gestion des dates a été complètement revu, on est passé d'une class ```Date``` du package ```java.util```. a une organization beaucoup meix faite, des classes du zone,
+des classe du durée, des classes de periode ect...
