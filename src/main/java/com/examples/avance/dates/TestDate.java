@@ -30,10 +30,20 @@ public class TestDate {
         dt = Chronology.ofLocale(Locale.FRANCE);
         ChronoLocalDate cld = dt.dateNow();
         annee = cld.get(ChronoField.YEAR);
-        System.out.println(" année chronologie francais : " +annee);
+        System.out.println(" année chronologie francais : " + annee);
 
         cld = JapaneseDate.now();
         annee = cld.get(ChronoField.YEAR);
-        System.out.println(" année chronologie japonais : " +annee);
+        System.out.println(" année chronologie japonais : " + annee);
+
+        // deuxieme partie
+
+        Facture fac = new Facture("000001");
+        System.out.println(fac);
+        System.out.println("Temps qui rest : " + fac.resteAvantEcheance());
+        System.out.println("Temps qui rest avnt fin d'anne : " + fac.resteAvantFinAnnee());
+
+        FactureZoneTime facZone = new FactureZoneTime("000001");
+        System.out.println(facZone);
     }
 }
