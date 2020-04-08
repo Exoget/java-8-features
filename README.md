@@ -263,8 +263,14 @@ Period period = Period.of(3, 2, 1);
 //You can modify the values of dates using periods
 LocalDate newDate = oldDate.plus(period);
 ```
-* Les Chronologies dans ```java.time.chrono``` une interface Chronology qui represent un systeme calendaire.
-
+* Les Chronologies dans ```java.time.chrono``` une interface Chronology qui represent un systeme calendaire ( qui sont pas standard au sens de norme ISO).
+ ```
+ Chronolgy : ISO
+ Chronolgy : Hijrah-umalqura
+ Chronolgy : ThaiBuddhist
+ Chronolgy : Minguo
+ Chronolgy : Japanese
+```
 * formatages des dates: a partir d'une date ou heure on va sortir une chaine de caractère ou l'inverse.
 le package ```java.time.format``` fourni des classes pour afficher et parser des dates, contient deux classes :```DateTimeFormatter``` et ```DateTimeFormatterBuilder```.
 ```
