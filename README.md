@@ -208,15 +208,15 @@ classe de service dans le package java.util.Stream.
 Méthodes : ```averaging(), counting(), groupingBy(), joining(), partitioningBy(), summing(), toMap(), toSet() ..```
 
 # API Date
-La gestion des dates a été complètement revu, on est passé d'une class ```Date``` du package ```java.util``` a une organization beaucoup mieux faite,des classes de dates
-des classes du zone, des classe du durée, des classes de periode ect...
-* Objectif de l'API Date : tout est dans le package ```java.time```, les classes sont des ```immutable value``` ( exp: les classes String. Ces des classes qui correpondent a des objets que vous ne pouvez pas modifier)
-c'est une classe organisée de tel facon que lorsqu'on cherche a modifier les données qui sont dans ces classes, on vous recreer un nouvel objet qui va prendre  en compte ces modifications.
-donc le fait que ces classes sont immutable value fait que on aura pas de problemes avec le multithreading car les thred ne peuvent pas modifie les donnée à l'interieur des objets.
+La gestion des dates a été complètement revu, on est passé d'une classe ```Date``` dans le package ```java.util``` à une organisation beaucoup mieux faite, des classes de dates
+des classes du zone, des classes du durée, des classes de periode etc...
+* Objectif de l'API Date : tous est dans le package ```java.time```, les classes sont des ```immutable value``` ( exp: les classes String. ce sont des classes qui correpondent a des objets 
+que vous ne pouvez pas modifier) ce sont des classe organisées de tel facon que lorsqu'on cherche a modifier les données qui sont dans ces classes, on vous recrée entièrement un nouvel objet 
+qui va prendre en compte ces modifications. Du fait que ces classes sont immutables, on aura pas de problemes avec le multithreading car les thread ne peuvent pas modifier les donnée à l'interieur des objets.
 
-* LocalDate, LocalTime, LocalDateTime : gérant une date local , methode de création : ```now, of, from, parse```.
-tres utili lorsqu'on travail sur une poste isolée
-Les modifications des données se fait via l"'operateur ```with```.
+* ```LocalDate```, ```LocalTime```, ```LocalDateTime``` : gérant une date locale , methode de création : ```now, of, from, parse```.
+tres util lorsqu'on travail sur une poste isolée
+Les modifications des données se font via l'operateur ```with```.
 ```
 //Set the value, returning a new object
 LocalDateTime thePast = timePoint.withDayOfMonth(10).withYear(2010);								
@@ -225,7 +225,7 @@ a value and field pair */
 LocalDateTime yetAnother = thePast.plusWeeks(3).plus(3, ChronoUnit.WEEKS);
 ```
 				
-Les ajusteurs, certains sont des standars et on peut créer nos propre ajusteurs
+Les ```Ajusteurs```, certains sont des standards et on peut créer nos propre ajusteurs
 ```
 //importation static
 import static java.time.temporal.TemporalAdjusters.*;
@@ -236,7 +236,7 @@ bar = timePoint.with(previousOrSame(ChronnoUnit.WEDNESDAY)); // importation stat
 //using value classes as adjusters
 timePoint.with(LocalTime.now());
 ```
-Possibilités de tronquer les info
+avec la possibilité de tronquer les infos.
 ```
 LocalTime truncedTime = time.trancatedTo(ChronoUnit.SECONDS);
 ```
@@ -248,7 +248,7 @@ ZoneId id = ZoneId.of("Europe/Paris");
 ZonedDateTime zoned = ZonedDateTime.of(dateTime, id);//ZonedDateTime est date / heure avec les informations de zone
 assertEquals(id, ZoneId.from(zoned));
 ```
-offset c'est le decalage para rapport au temp universel, OffsetDateTime/OffsetTime.
+offset c'est le decalage par rapport au temp universel, OffsetDateTime/OffsetTime.
 
 ```
 OffsetTime time = OffsetTime.now();
@@ -256,11 +256,11 @@ OffsetTime time = OffsetTime.now();
 OffsetTime sameTimeDifferentOffset = time.withOffsetSameInstant(offset);
 
 ```
-* Class Periode, Duration : pour noter les durées de l'ordre jours-mois-années( Periode ) ou de l'ordre heure, minutes (Duration) c'est plus précis que la periode.
+* Class ```Period```, ```Duration``` : pour noter les durées de l'ordre jours-mois-années( Period ) ou de l'ordre heure, minutes (Duration) c'est plus précis que la periode.
 ```
 // 3 years, 2 months, 1 day
 Period period = Period.of(3, 2, 1);
 //You can modify the values of dates using periods
 LocalDate newDate = oldDate.plus(period);
 ```
-* Les Chronologies dans ```java.time.chrono``` une interface Chronology qui represent un systeme calendaire
+* Les Chronologies dans ```java.time.chrono``` une interface Chronology qui represent un systeme calendaire.
