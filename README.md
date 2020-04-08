@@ -271,6 +271,7 @@ LocalDate newDate = oldDate.plus(period);
  Chronolgy : Minguo
  Chronolgy : Japanese
 ```
+chaque chronologie a sa propre representation ( un style de date et d'heure )
 * formatages des dates: a partir d'une date ou heure on va sortir une chaine de caractère ou l'inverse.
 le package ```java.time.format``` fourni des classes pour afficher et parser des dates, contient deux classes :```DateTimeFormatter``` et ```DateTimeFormatterBuilder```.
 ```

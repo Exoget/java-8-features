@@ -40,13 +40,14 @@ public class TestDate {
         // deuxieme partie
 
         Facture fac = new Facture("000001");
-        System.out.println("affichage date sans formatter : " + fac);
-        System.out.println("affichage date avec formatter : " + fac.showInFormat());
-        System.out.println("affichage date avec formatterBuilder : " + fac.showInFormatBuilder());
+        System.out.println("affichage simple : " + fac);
+        System.out.println("affichage formaté : " + fac.showInFormat());
+        System.out.println("affichage formaté avancé : " + fac.showInFormatBuilder());
         System.out.println("Temps qui rest : " + fac.resteAvantEcheance());
         System.out.println("Temps qui rest avant fin d'anne : " + fac.resteAvantFinAnnee());
+        // parse une chaine de cartere pour recuperer une date
         fac.accept("01 01 2020");
-        System.out.println("affichage date avec formatter : " + fac.showInFormat());
+        System.out.println("affichage formaté : " + fac.showInFormat());
 
         FactureZoneTime facZone = new FactureZoneTime("000001");
         System.out.println(facZone);
