@@ -264,3 +264,21 @@ Period period = Period.of(3, 2, 1);
 LocalDate newDate = oldDate.plus(period);
 ```
 * Les Chronologies dans ```java.time.chrono``` une interface Chronology qui represent un systeme calendaire.
+
+* formatages des dates: a partir d'une date ou heure on va sortir une chaine de caractère ou l'inverse.
+le package ```java.time.format``` fourni des classes pour afficher et parser des dates, contient deux classes :```DateTimeFormatter``` et ```DateTimeFormatterBuilder```.
+```
+// recupération d'un texte a partir d'une date
+LocalDate date = LocalDate.now();
+String chaine = date.format(formatter);
+// recupération d'une date a partir d'un texte
+LocalDate parsedDate = LocalDate.parse(text, formatter)
+```
+
+Dans le cas ou on a un format trés spécifique on passe par le Builder.
+```
+DateTimeFormatter formatter = new DateTimeFormatterBuilder().appendLiteral("New Year In").appendValue(ChronoField.YEAR)
+.appendLiteral("is on")
+.appendText(ChronoField.DAY_OF_WEEK, TextStyle.FULL_STANDALONE)
+.toFormatter();
+```

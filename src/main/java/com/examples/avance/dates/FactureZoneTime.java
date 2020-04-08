@@ -8,13 +8,14 @@ public class FactureZoneTime {
     private ZonedDateTime date;
     private ZonedDateTime dateEcheance;
 
-    private static Period dureeMAX = Period.of(0, 2, 0);
+    // l'echance pour tous les facture c'est deux mois
+    private static final Period DUREEMAX = Period.of(0, 2, 0);
 
 
     public FactureZoneTime(String numero) {
         this.numero = numero;
         date = ZonedDateTime.now();
-        dateEcheance = date.plus(dureeMAX);
+        dateEcheance = date.plus(DUREEMAX);
     }
 
     @Override

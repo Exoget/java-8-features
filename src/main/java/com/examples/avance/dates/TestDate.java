@@ -12,13 +12,14 @@ public class TestDate {
 
     public static void main(String args[]) {
 
-        LocalDateTime tp = LocalDateTime.now();
+        // creation date time local
+        LocalDateTime tdt = LocalDateTime.now();
         LocalTime lt = LocalTime.of(12, 12);
         lt.minusMinutes(12);
 
         //informations zonées
         ZoneId zone = ZoneId.of("Europe/Paris");
-        ZonedDateTime zd = ZonedDateTime.of(tp, zone);
+        ZonedDateTime zd = ZonedDateTime.of(tdt, zone);
 
         Period p = Period.of(1, 0, 0);
         LocalDate ld = LocalDate.now();
@@ -39,9 +40,13 @@ public class TestDate {
         // deuxieme partie
 
         Facture fac = new Facture("000001");
-        System.out.println(fac);
+        System.out.println("affichage date sans formatter : " + fac);
+        System.out.println("affichage date avec formatter : " + fac.showInFormat());
+        System.out.println("affichage date avec formatterBuilder : " + fac.showInFormatBuilder());
         System.out.println("Temps qui rest : " + fac.resteAvantEcheance());
-        System.out.println("Temps qui rest avnt fin d'anne : " + fac.resteAvantFinAnnee());
+        System.out.println("Temps qui rest avant fin d'anne : " + fac.resteAvantFinAnnee());
+        fac.accept("01 01 2020");
+        System.out.println("affichage date avec formatter : " + fac.showInFormat());
 
         FactureZoneTime facZone = new FactureZoneTime("000001");
         System.out.println(facZone);
