@@ -290,10 +290,18 @@ DateTimeFormatter formatter = new DateTimeFormatterBuilder().appendLiteral("New 
 .toFormatter();
 ```
 
-# Collection: Le Tri parallèle
-apparu en java 8, particuliérement trés intéressant sur les notion de tableaux.
-La classe ```Arrays``` du package ```java.util``` propose plusieurs methodes de travail sur les tableaux : des tri avec ```sort()```, ou tri parallèle avec ```parallelSort()```.
+# Collection:
+### Le Tri parallèle
+notion apparu en java 8, particuliérement trés intéressant sur les notions de tableaux.
+La classe ```Arrays``` du package ```java.util.Arrays``` propose plusieurs methodes de travail sur les tableaux : des tri simple avec ```sort()```, ou tri parallèle avec ```parallelSort()```.
 La méthode sort s'applique à toute sorte d'éléments:
-* avec indexes
+* avec indexes ( positions)
 * avec Comparateurs
 * le tri en // devise le tableau en répartissant les morceaux (split) sur des threads différents.
+### Encodage Base64
+sous le package ```java.util.Base64```, c'est un codage de l'inforamtion qui couvre les trois grande encodage:
+* Encodage BASIC : qui traite des textes
+* Encodage URL des urls, des fichier qui utilise kes nom des fichier ,les nom des urls qui utilise des caractères spéciaux
+* Encodage MIME : les immages, les données binaires, definie comme encodage MIME ( tout simplement l'idée de départ que les protocoles à l'origine,
+le protocole mail par exemple ont été concu pour transmettrent des msg en text suelement, mais maitenant les échanges de données sont bien plus que du text
+ce qui provoque un augmentation du volume de données générés ).
