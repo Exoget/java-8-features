@@ -1,4 +1,4 @@
-# java-8-features
+# Java-8-features
 Les points importants dans La version Java 8
 
 # Syntaxe Lambdas : ( utilisée en langage fonctionnel)
