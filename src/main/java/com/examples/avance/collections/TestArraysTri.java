@@ -16,10 +16,21 @@ public class TestArraysTri {
         long t0 = System.currentTimeMillis();
         Arrays.sort(tableau);
         long t1 = System.currentTimeMillis();
+        for (int i = 0; i < 10; i++) {
+            System.out.println(tableau[i]);
+        }
+        System.out.println("Tri en mils :" + (t1 - t0));
+
+
+        // sur des petites dimensions le tri en // c'est plus coûteux
+        // a partir de cetain nombre le tri en // devient plus efficace que le séquentiel
+        t0 = System.currentTimeMillis();
+        Arrays.parallelSort(tableau);
+        t1 = System.currentTimeMillis();
 
         for (int i = 0; i < 10; i++) {
             System.out.println(tableau[i]);
         }
-        System.out.println(" sort en mils " + (t1 - t0));
+        System.out.println("Tri parallèle en mils :" + (t1 - t0));
     }
 }
