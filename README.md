@@ -321,3 +321,9 @@ Java peut appler JavaScript , JavaScript peut appler Java c'est particulierement
 ```
 C:\Programmes\Directories\Direct> jjs.exe script.sj
 ```
+* ```javac -profile``` : notion trés interessante pout tous ce qui est machine virtuelle embarqué, des resources réduite en particulier en terme de memoire disponible
+L'interret réduire l'empreinte memoire ( pour les applications qui n'ont pas de toute la platforme).
+Nous avons une option dans le compilateur Java qui est ```-profile```: il y 3 trois profiles et le denier c'est le profile complet ( toute la platfome java)
+![profiles](profiles.PNG)
+
+Avec l'ulisation du ```jdeps -profile``` je peux savoir non suelement les dependances mais aussi avec quel niveau mon application elle est défini.
