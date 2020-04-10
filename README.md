@@ -289,3 +289,11 @@ DateTimeFormatter formatter = new DateTimeFormatterBuilder().appendLiteral("New 
 .appendText(ChronoField.DAY_OF_WEEK, TextStyle.FULL_STANDALONE)
 .toFormatter();
 ```
+
+# Collection: Le Tri parallèle
+apparu en java 8, particuliérement trés intéressant sur les notion de tableaux.
+La classe ```Arrays``` du package ```java.util``` propose plusieurs methodes de travail sur les tableaux : des tri avec ```sort()```, ou tri parallèle avec ```parallelSort()```.
+La méthode sort s'applique à toute sorte d'éléments:
+* avec indexes
+* avec Comparateurs
+* le tri en // devise le tableau en répartissant les morceaux (split) sur des threads différents.
