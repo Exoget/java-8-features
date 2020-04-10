@@ -305,3 +305,19 @@ sous le package ```java.util.Base64```, c'est un codage de l'inforamtion qui cou
 * Encodage MIME : les immages, les données binaires, definie comme encodage MIME ( tout simplement l'idée de départ que les protocoles à l'origine,
 le protocole mail par exemple ont été concu pour transmettrent des msg en text suelement, mais maitenant les échanges de données sont bien plus que du text
 ce qui provoque un augmentation du volume de données générés ).
+# Les outils Java8
+### Les outils Ligne de Commande:
+* ```jjs``` : Mouteur JS Nashorn (Interpréteur JavaScript)
+```
+C:\Programmes\Directories\Direct> jjs.exe script.sj
+```
+Il est aussi encapsulable, utilisable dans le code java
+Java peut appler JavaScript , JavaScript peut appler Java c'est particulierement vrais pour les applications Java FX(les application JavaFX sont executables comme script,
+ c'est la couche IHM du Java8)
+ pour plus d'information [JavaScript Engine Nashorn .](https://www.oracle.com/technical-resources/articles/java/jf14-nashorn.html) 
+
+* ```jdeps``` : rechercher les dependances entre les classe de notre projet, comment s'est organisé les dependances, peut générer des graphique.
+* ```javac -h``` : compilateur qui générer les entetes natifs a la place de javah ( java peut s'interfacer avec du C, dans ce cas typement dans le classe java on devrait créer une methode native)
+```
+C:\Programmes\Directories\Direct> jjs.exe script.sj
+```
