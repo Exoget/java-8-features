@@ -4,7 +4,8 @@ import com.examples.bases.interfaces.Classable;
 
 public class UtilsGenerique {
 
-    // cette fonction permet de trier des element generique de type classable
+    // Cette fonction permet de trier des elements générique de type classable.
+    // On utilise extends dans generic : à la fois extends context class (héritage) ou bien implements context interface.
     static <T extends Classable> void tri(ListeGenerique<T> tab) throws Exception{
         int i, j;
         T c;
