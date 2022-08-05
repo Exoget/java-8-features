@@ -327,3 +327,7 @@ Nous avons une option dans le compilateur Java qui est ```-profile```: il y 3 tr
 ![profiles](profiles.PNG)
 
 Avec l'ulisation du ```jdeps -profile``` je peux savoir non suelement les dependances mais aussi avec quel niveau mon application elle est défini.
+# JavaFX
+[JavaFX](https://fr.wikipedia.org/wiki/JavaFX) est un framework et une bibliothèque d'interface utilisateur (conçue pour remplacer Swing et AWT) issue du projet OpenJFX, 
+qui permet aux développeurs Java de créer une interface graphique pour des applications de bureau, des applications internet riches et des applications smartphones et tablettes tactiles.
+[Communauté JavaFX](http://fxexperience.com/about/)
